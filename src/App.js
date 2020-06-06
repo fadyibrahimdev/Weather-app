@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicPath = path.join(__dirname, '../public') //to get the path of our static content
 const viewsPath = path.join(__dirname, '../templates/views') //to get the path of our views for hbs
@@ -82,6 +83,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000!')
+app.listen(port, () => {
+    console.log(`Server started on port ${port}!`)
 })
